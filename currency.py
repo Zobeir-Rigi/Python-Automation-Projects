@@ -5,6 +5,7 @@ BASE_URL = f'https://api.freecurrencyapi.com/v1/latest?apikey={API_KEY}' #Becaus
 
 CURRENCIES = ["USD", "CAD", "EUR", "AUD", "CNY"]
 
+# defining a function to format the url
 def convert_currency(base): 
     currencies = ",".join(CURRENCIES) #In JS => const currencies = CURRENCIES.join(',');
     url = f"{BASE_URL}&base_currency={base}&currencies={currencies}"
@@ -12,12 +13,15 @@ def convert_currency(base):
     try: 
         response = requests.get(url)
         data = response.json()
-        print (data)
+        return data["data"]
     except:
         print("Invalid currency.")
         return None
-# defining a function to format the url
-convert_currency("CAD")
 
+data = convert_currency("CAD")
+del data["CAD"]
+# Python dictionaries(ticker & value) = objects in JS (key & value)
+for ticker, value in data.items():
+    print(F"{ticker}:{value}")
 
 
