@@ -18,8 +18,11 @@ def convert_currency(base):
         print("Invalid currency.")
         return None
 
-data = convert_currency("CAD")
-del data["CAD"]
+ base = input("Enter the base currency (q for quit): ").upper()
+
+
+data = convert_currency(base)
+del data[base]
 # Python dictionaries(ticker & value) = objects in JS (key & value)
 for ticker, value in data.items():
     print(F"{ticker}:{value}")
