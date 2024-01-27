@@ -1,2 +1,5 @@
 # Python-Automation-Projects
-Today i'm going to show you how you can automate your life with these 3 fun, simple yet effective projects. These projects illustrate the power of knowing Python &amp; the automation techniques.
+This project illustrates the power of knowing Python &amp; automation techniques.
+installing a python module to call the API, the module called requests:pip3 install requests
+using this website for the API: https://freecurrencyapi.com/
+we need to make an account on this website.
