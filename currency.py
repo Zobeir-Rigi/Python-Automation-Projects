@@ -18,8 +18,15 @@ def convert_currency(base):
         print("Invalid currency.")
         return None
 
- base = input("Enter the base currency (q for quit): ").upper()
+while True:
+    base = input("Enter the base currency (q for quit): ").upper()
 
+    if base == "Q":
+        break
+
+    data = convert_currency(base)
+    if not data:
+        continue
 
 data = convert_currency(base)
 del data[base]
