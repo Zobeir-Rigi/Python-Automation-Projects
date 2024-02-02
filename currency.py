@@ -5,7 +5,6 @@ BASE_URL = f'https://api.freecurrencyapi.com/v1/latest?apikey={API_KEY}' #Becaus
 
 CURRENCIES = ["USD", "CAD", "EUR", "AUD", "CNY"]
 
-# defining a function to format the url
 def convert_currency(base): 
     currencies = ",".join(CURRENCIES) #In JS => const currencies = CURRENCIES.join(',');
     url = f"{BASE_URL}&base_currency={base}&currencies={currencies}"
